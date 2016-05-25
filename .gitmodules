@@ -1,0 +1,3 @@
+[submodule "6th-edition"]
+	path = 6th-edition
+	url = git@github.com:thiagogenez/CtCI-6th-Edition.git
