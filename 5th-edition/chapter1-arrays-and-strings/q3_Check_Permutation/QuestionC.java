@@ -6,7 +6,7 @@ public class QuestionC {
 	int bitVector = 0;
 
 	for (char c : str.toCharArray()) {
-	    int value = c - 'a';
+	    int value = getCharNumber(c);
 	    bitVector = toggle(bitVector, value);
 	}
 
@@ -27,6 +27,17 @@ public class QuestionC {
 
 	return bitVector;
     }
+    
+    public static int getCharNumber(Character c) {
+	int a = Character.getNumericValue('a');
+	int z = Character.getNumericValue('z');
+	
+	int val = Character.getNumericValue(c);
+	if (a <= val && val <= z) {
+		return val - a;
+	}
+	return -1;
+}
 
     public static boolean isPermutation(String str1, String str2) {
 	if (str1.length() != str2.length()) {
@@ -42,8 +53,8 @@ public class QuestionC {
 
     // non-unique letters only
     public static void main(String[] args) {
-	String[][] strings = { { "Thiago", "agoihT" }, { "abcdefg", "abcdwrt" },
-		{ "abcdefg", "efgabcd" } };
+	String[][] strings = { { "Thiago", "agoihT" }, { "abcdefg", "bcdwrtg" },
+		{ "qwert", "WEqrt" } };
 
 	for (String[] str : strings) {
 	    System.out.println("'" + str[0] + "' is permutation of '" + str[1]
