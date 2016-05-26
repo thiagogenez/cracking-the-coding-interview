@@ -8,7 +8,7 @@ public class QuestionA {
 	    return false;
 	}
 
-	int asciiTable[] = new int[256];
+	int asciiTable[] = new int[256]; // assumption
 
 	for (int i = 0; i < str1.length(); i++) {
 	    asciiTable[str1.charAt(i)]++;
