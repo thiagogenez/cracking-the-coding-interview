@@ -6,8 +6,12 @@ public class LinkedListNode<T> {
 
     public LinkedListNode<T> next;
 
+    public LinkedListNode<T> previous;
+
     public LinkedListNode(T value) {
 	this.value = value;
+	this.next = null;
+	this.previous = null;
     }
 
     public String printForward() {
@@ -26,14 +30,25 @@ public class LinkedListNode<T> {
 	}
     }
 
-    public void insertFront(LinkedListNode<T> node) {
-	if (node != null) {
-	    next = node;
+  
+
+    public void setNext(LinkedListNode<T> node) {
+	this.next = node;
+	if (node != null && node.previous != this) {
+	    node.setPrevious(this);
+	}
+
+    }
+
+    public void setPrevious(LinkedListNode<T> node) {
+	this.previous = node;
+	if(node != null && node.next != this){
+	    node.setNext(this);
 	}
     }
-    
+
     @Override
     public String toString() {
-        return String.valueOf(value);
+	return String.valueOf(value);
     }
 }

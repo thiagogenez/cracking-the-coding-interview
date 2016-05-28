@@ -30,15 +30,16 @@ public class QuestionA {
     
 
     public static void main(String[] args) {
-	LinkedListNode<Integer> first = new LinkedListNode<Integer>(0);
-	LinkedListNode<Integer> head = first;
-	LinkedListNode<Integer> node;
+	LinkedListNode<Integer> previous = new LinkedListNode<Integer>(0);
+	LinkedListNode<Integer> head = previous;
+	LinkedListNode<Integer> current;
 	for (int i = 1; i < 20; i++) {
-		node = new LinkedListNode<Integer>(i % 3);
-		node.insertFront(head);
-		head = node;
+		current = new LinkedListNode<Integer>(i % 10);
+		current.setPrevious(previous);
+		previous.setNext(current);
+		
+		previous = current;
 	}
-	
 	
 	System.out.println(head.printForward());
 	deleteDups(head);
