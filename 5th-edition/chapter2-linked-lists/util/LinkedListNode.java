@@ -31,4 +31,9 @@ public class LinkedListNode<T> {
 	    next = node;
 	}
     }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }

@@ -23,7 +23,7 @@ public class QuestionA {
     public static <T> void deleteDups(LinkedListNode<T> node){
 	LinkedListNode<T> aux = node;
 	while(aux != null){
-	    node = remove(aux, aux.value);
+	    remove(aux, aux.value);
 	    aux = aux.next;
 	}
     }
@@ -34,7 +34,7 @@ public class QuestionA {
 	LinkedListNode<Integer> head = first;
 	LinkedListNode<Integer> node;
 	for (int i = 1; i < 20; i++) {
-		node = new LinkedListNode<Integer>(i % 6);
+		node = new LinkedListNode<Integer>(i % 3);
 		node.insertFront(head);
 		head = node;
 	}
