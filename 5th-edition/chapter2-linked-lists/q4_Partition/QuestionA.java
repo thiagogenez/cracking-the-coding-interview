@@ -1,6 +1,7 @@
 package q4_Partition;
 
 import util.LinkedListNode;
+import util.Methods;
 
 public class QuestionA {
 
@@ -52,15 +53,9 @@ public class QuestionA {
     }
 
     public static void main(String[] args) {
-	int[] array = { 33, 9, 2, 3, 10, 10389, 838, 874578, 5 };
-	LinkedListNode<Integer> previous = new LinkedListNode<Integer>(8);
-	LinkedListNode<Integer> head = previous;
-	LinkedListNode<Integer> current;
-	for (int i = 0; i < array.length; i++) {
-	    current = new LinkedListNode<Integer>(array[i]);
-	    previous.setNext(current);
-	    previous = current;
-	}
+	Integer[] array = { 33, 9, 2, 3, 10, 10389, 838, 874578, 5 };
+	LinkedListNode<Integer> head = Methods.createLinkedListFromArray(array);
+	
 
 	System.out.println(head.printForward());
 	head = partition(head, 1000);
