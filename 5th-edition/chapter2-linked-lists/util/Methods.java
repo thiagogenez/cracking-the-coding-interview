@@ -13,6 +13,14 @@ public class Methods {
 	}
 	return head;
     }
+    
+    public static <T> LinkedListNode<T> getTail(LinkedListNode<T> head){
+	while(head!= null && head.next != null){
+	    head = head.next;
+	}
+	return head;
+		
+    }
 
     public static <T> LinkedListNode<T> reverseIterative(
 	    LinkedListNode<T> head) {
