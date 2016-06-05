@@ -45,4 +45,22 @@ public class Methods {
 
 	return previous;
     }
+
+    public static <T> int lengthIterative(LinkedListNode<T> head) {
+	int size = 0;
+
+	while (head != null) {
+	    size++;
+	    head = head.next;
+	}
+
+	return size;
+    }
+
+    public static <T> int lengthRecursive(LinkedListNode<T> node) {
+	if (node != null) {
+	    return 1 + lengthRecursive(node.next);
+	}
+	return 0;
+    }
 }

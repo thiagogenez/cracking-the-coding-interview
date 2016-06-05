@@ -1,18 +1,12 @@
 package q2_Return_Kth_To_Last;
 
 import util.LinkedListNode;
+import util.Methods;
 
 public class QuestionA {
 
-    public static <T> int size(LinkedListNode<T> node) {
-	if (node != null) {
-	    return 1 + size(node.next);
-	}
-	return 0;
-    }
-
     public static <T> T kthToLast(LinkedListNode<T> node, int k) {
-	int size = size(node);
+	int size = Methods.lengthRecursive(node);
 	int i = 0;
 	while (node != null) {
 	    if (size - i == k) {
