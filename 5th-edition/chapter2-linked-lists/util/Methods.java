@@ -13,13 +13,13 @@ public class Methods {
 	}
 	return head;
     }
-    
-    public static <T> LinkedListNode<T> getTail(LinkedListNode<T> head){
-	while(head!= null && head.next != null){
+
+    public static <T> LinkedListNode<T> getTail(LinkedListNode<T> head) {
+	while (head != null && head.next != null) {
 	    head = head.next;
 	}
 	return head;
-		
+
     }
 
     public static <T> LinkedListNode<T> reverseIterative(
@@ -70,5 +70,39 @@ public class Methods {
 	    return 1 + lengthRecursive(node.next);
 	}
 	return 0;
+    }
+
+    public static <T> LinkedListNode<T> clone(LinkedListNode<T> head) {
+
+	LinkedListNode<T> clone = null;
+	LinkedListNode<T> tail = null;
+	LinkedListNode<T> node = null;
+	while (head != null) {
+	    node = new LinkedListNode<T>(head.value);
+	    
+	    if (clone == null) {
+		clone = node;
+		tail = node;
+	    } else {
+		tail.next = node;
+		tail = node;
+	    }
+	    head = head.next;
+	}
+	return clone;
+    }
+    
+    public static <T> LinkedListNode<T> reverseAndClone(LinkedListNode<T> head){
+	LinkedListNode<T> previous = null;
+	
+	while(head != null){
+	    LinkedListNode<T> node = new LinkedListNode<T>(head.value);
+	    node.next = previous;
+	    previous = node;
+	    
+	    head = head.next;
+	    
+	}
+	return previous;
     }
 }

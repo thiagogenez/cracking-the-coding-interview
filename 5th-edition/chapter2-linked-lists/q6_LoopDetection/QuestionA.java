@@ -1,6 +1,5 @@
 package q6_LoopDetection;
 
-import javafx.scene.control.Tab;
 import util.LinkedListNode;
 import util.Methods;
 
