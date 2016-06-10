@@ -2,11 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="5th-edition/chapter1-arrays-and-strings"/>
 	<classpathentry kind="src" path="5th-edition/chapter2-linked-lists"/>
+	<classpathentry kind="src" path="5th-edition/chapter3-stacks-and-queues"/>
 	<classpathentry kind="src" path="6th-edition/Java/Introduction"/>
 	<classpathentry kind="src" path="6th-edition/Java/Big O"/>
 	<classpathentry kind="src" path="6th-edition/Java/CtCILibrary"/>
 	<classpathentry kind="src" path="6th-edition/Java/Ch 01. Arrays and Strings"/>
 	<classpathentry kind="src" path="6th-edition/Java/Ch 02. Linked Lists"/>
+	<classpathentry kind="src" path="6th-edition/Java/Ch 03. Stacks and Queues"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

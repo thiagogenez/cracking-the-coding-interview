@@ -22,12 +22,12 @@ public class QuestionC {
 
 	Wrapper<T> current = isPalindrome(head.next, length - 2);
 
-	if (!current.palindrome || current.iter == null) {
+	if (!current.palindrome || current.runner == null) {
 	    return current;
 	}
 
-	current.palindrome = current.iter.value.equals(head.value);
-	current.iter = current.iter.next;
+	current.palindrome = current.runner.value.equals(head.value);
+	current.runner = current.runner.next;
 
 	return current;
     }
@@ -46,10 +46,10 @@ public class QuestionC {
 
 class Wrapper<T> {
     public Wrapper(LinkedListNode<T> node, boolean b) {
-	this.iter = node;
+	this.runner = node;
 	this.palindrome = b;
     }
 
-    LinkedListNode<T> iter;
+    LinkedListNode<T> runner;
     boolean palindrome;
 }
