@@ -1,5 +1,7 @@
 package q1_Three_Queue_in_One_Array;
 
+import java.util.EmptyStackException;
+
 public class QuestionA<T> {
 
     private T values[];
@@ -28,6 +30,14 @@ public class QuestionA<T> {
 	values[index] = value;
 	size[stack]++;
     }
+    
+    public T peek(int stack) {
+	if (isEmpty(stack)) {
+	    throw new RuntimeException("Empty stack");
+	}	
+	int index = getTopIndex(stack) - 1;
+	return values[index];
+}
 
     public T pop(int stack) {
 	if (isEmpty(stack)) {
@@ -65,6 +75,8 @@ public class QuestionA<T> {
 	stack.push(2, 0);
 	stack.push(2, 1);
 	stack.push(2, 2);
+	
+	System.out.println(stack.peek(1));
 
 	stack.push(3, 0);
 	stack.push(3, 1);
