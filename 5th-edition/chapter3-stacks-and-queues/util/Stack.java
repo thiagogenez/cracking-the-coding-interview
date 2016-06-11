@@ -1,10 +1,10 @@
 package util;
 
-public class Queue<T> {
+public class Stack<T> {
 
     private Node<T> top;
 
-    public Queue() {
+    public Stack() {
     }
 
     public boolean isEmpty() {
