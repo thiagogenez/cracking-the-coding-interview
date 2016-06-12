@@ -3,6 +3,8 @@ package util;
 public class Stack<T> {
 
     private Node<T> top;
+    
+    private Node<T> bottom;
 
     private int capacity;
 
@@ -32,12 +34,17 @@ public class Stack<T> {
 	Node<T> newNode = new Node<T>(value);
 	if (top == null) {
 	    top = newNode;
+	    bottom = newNode;
 	} else {
 	    newNode.next = top;
 	    top = newNode;
 	}
 
 	size++;
+    }
+    
+    public int size(){
+	return size;
     }
 
     public T pop() {
