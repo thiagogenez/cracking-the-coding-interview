@@ -1,8 +1,6 @@
 package q1_Three_Queue_in_One_Array;
 
-import java.util.EmptyStackException;
-
-public class QuestionA<T> {
+public class FixedArrayStack<T> {
 
     private T values[];
 
@@ -10,12 +8,12 @@ public class QuestionA<T> {
 
     private int size[];
 
-    public QuestionA(int capacity) {
+    public FixedArrayStack(int capacity) {
 	this(capacity, 3);
     }
 
     @SuppressWarnings("unchecked")
-    public QuestionA(int capacity, int numberOfStack) {
+    public FixedArrayStack(int capacity, int numberOfStack) {
 	this.capacity = capacity;
 	this.values = (T[]) new Object[capacity * numberOfStack];
 	this.size = new int[numberOfStack];
@@ -65,28 +63,5 @@ public class QuestionA<T> {
 	return size[stack] == 0;
     }
 
-    public static void main(String[] args) {
-	QuestionA<Integer> stack = new QuestionA<Integer>(3);
-
-	stack.push(1, 0);
-	stack.push(1, 1);
-	stack.push(1, 2);
-
-	stack.push(2, 0);
-	stack.push(2, 1);
-	stack.push(2, 2);
-	
-	System.out.println(stack.peek(1));
-
-	stack.push(3, 0);
-	stack.push(3, 1);
-	stack.push(3, 2);
-
-	System.out.println(stack.pop(0));
-	System.out.println(stack.pop(0));
-	System.out.println(stack.pop(0));
-
-	stack.push(4, 2);
-
-    }
+  
 }
