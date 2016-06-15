@@ -3,8 +3,6 @@ package util;
 public class Stack<T> {
 
     private Node<T> top;
-    
-    private Node<T> bottom;
 
     private int capacity;
 
@@ -34,7 +32,6 @@ public class Stack<T> {
 	Node<T> newNode = new Node<T>(value);
 	if (top == null) {
 	    top = newNode;
-	    bottom = newNode;
 	} else {
 	    newNode.next = top;
 	    top = newNode;
@@ -42,8 +39,8 @@ public class Stack<T> {
 
 	size++;
     }
-    
-    public int size(){
+
+    public int size() {
 	return size;
     }
 
@@ -66,17 +63,30 @@ public class Stack<T> {
 	return top.value;
     }
 
-    private void printStack(StringBuilder builder, Node<T> node) {
+    private void printStack(StringBuilder builder, Node<T> node,
+	    boolean inverse) {
 	if (node != null) {
-	    builder.append(node.value.toString() + " ");
-	    printStack(builder, node.next);
+	    if (inverse) {
+		printStack(builder, node.next, inverse);
+		builder.append(node.value.toString() + " ");
+	    } else {
+		builder.append(node.value.toString() + " ");
+		printStack(builder, node.next, inverse);
+	    }
 	}
     }
 
     public String printStack() {
 	StringBuilder builder = new StringBuilder();
-	printStack( builder, top);
-	
+	printStack(builder, top, false);
+
+	return builder.toString();
+    }
+
+    public String printStackInverse() {
+	StringBuilder builder = new StringBuilder();
+	printStack(builder, top, true);
+
 	return builder.toString();
     }
 }
