@@ -83,6 +83,12 @@ public class Stack<T> {
 	return builder.toString();
     }
 
+    @Override
+    public String toString() {
+        return printStack();
+    }
+    
+    
     public String printStackInverse() {
 	StringBuilder builder = new StringBuilder();
 	printStack(builder, top, true);

@@ -17,5 +17,6 @@ public class Question {
 		System.out.println("New min is " + stack.min());
 	    }
 	}
+	
     }
 }
