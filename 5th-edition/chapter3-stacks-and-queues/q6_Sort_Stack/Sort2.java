@@ -3,6 +3,9 @@ package q6_Sort_Stack;
 import util.Stack;
 
 public class Sort2 {
+    
+    // complexity time: O(n^2)
+    // complexity space: O(n)
     public static void sort(Stack<Integer> stack) {
 	Stack<Integer> aux = new Stack<>(stack.size());
 
