@@ -19,7 +19,7 @@ public class Sort {
 	return min;
     }
 
-    // complexity time: O(n^2)
+    // complexity time: O(n^3)
     // complexity space: O(n)
     public static void sort(Stack<Integer> stack) {
 	Stack<Integer> aux = new Stack<>(stack.size());

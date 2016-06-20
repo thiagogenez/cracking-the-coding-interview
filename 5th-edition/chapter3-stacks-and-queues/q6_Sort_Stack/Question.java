@@ -15,7 +15,7 @@ public class Question {
 	}
 	
 	System.out.println("before: "+s.printStack());
-	Sort.sort(s);
+	Sort2.sort(s);
 	System.out.println("after: "+s.printStack());
 
     }
