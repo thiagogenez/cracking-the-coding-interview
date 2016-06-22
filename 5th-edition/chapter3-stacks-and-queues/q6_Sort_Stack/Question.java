@@ -9,13 +9,13 @@ public class Question {
 	
 	
 	Stack<Integer> s = new Stack<Integer>();
-	int[] array = {5,4,3,2,1,1,2,3,4,5};
+	int[] array = {1,2,3,4,4,3,2,1};
 	for (int value : array) {
 	    s.push(value);
 	}
 	
 	System.out.println("before: "+s.printStack());
-	Sort2.sort(s);
+	MergeSort.sort(s);
 	System.out.println("after: "+s.printStack());
 
     }
